@@ -21,6 +21,8 @@ public class UserService : IUserService
     public async Task<bool> DeleteUserAsync(Guid userId)
     {
         var user = await _unitOfWork.UserRepository.DeleteUserAsync(userId);
+
+        
         await _unitOfWork.CommitAsync();
 
         return user;

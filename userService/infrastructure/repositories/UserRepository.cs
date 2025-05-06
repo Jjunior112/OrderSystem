@@ -34,6 +34,8 @@ public class UserRepository : IUserRepository
 
         if (user == null) return false;
 
+        _userDbContext.Remove(user);
+
         return true;
 
     }
